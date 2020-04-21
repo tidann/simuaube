@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 import 'dart:convert';
-import 'package:link/link.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() => runApp(SimuAube());
 
@@ -283,22 +283,57 @@ class _MainScreenState extends State<MainScreen> {
                                       " Ensuite, elle reste constante jusqu'à l'heure d'arrêt.",
                                 textAlign: TextAlign.justify,
                               ),
+                              SizedBox(height: 10.0),
                               Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                   Text('Site web : '),
-                                  Link(
-                                    child: Text('tidann.alwaysdata.net'),
-                                    url: 'http://www.google.com',
-                                  ),
+                                  MaterialButton(
+                                    child: Row(
+                                      children: <Widget>[
+                                        Text(
+                                          "tidann.alwaysdata.net",
+                                          style: TextStyle(
+                                            color: Theme.of(context).primaryColor,
+                                          ),
+                                        ),
+                                        SizedBox(width: 10.0),
+                                        Icon(
+                                          Icons.launch,
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                      ],
+                                    ),
+                                    onPressed: () {
+                                      launch("https://tidann.alwaysdata.net");
+                                    },
+                                  )
                                 ],
                               ),
                               Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
-                                  Text('Code source '),
-                                  Link(
-                                    child: Text('tidann.alwaysdata.net'),
-                                    url: 'http://www.google.com',
-                                  ),
+                                  Text('Code source : '),
+                                  MaterialButton(
+                                    child: Row(
+                                      children: <Widget>[
+                                        Text(
+                                            "Sur Github",
+                                          style: TextStyle(
+                                            color: Theme.of(context).primaryColor,
+                                          ),
+                                        ),
+                                        SizedBox(width: 10.0),
+                                        Icon(
+                                            Icons.launch,
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                      ],
+                                    ),
+                                    onPressed: () {
+                                      launch("https://github.com/tidanneels/simuaube/");
+                                    },
+                                  )
                                 ],
                               ),
                               SizedBox(height: 20.0),
@@ -357,7 +392,7 @@ class _TimeCardState extends State<TimeCard> {
                 style: Theme.of(context).textTheme.title,
               ),
               leading: Icon(
-                Icons.timer,
+                Icons.access_alarm,
                 size: 40.0,
               ),
               subtitle: Padding(
