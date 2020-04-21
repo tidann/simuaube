@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
-import 'dart:async';
 import 'dart:convert';
-import 'dart:typed_data';
+import 'package:link/link.dart';
 
 void main() => runApp(SimuAube());
 
@@ -283,6 +282,24 @@ class _MainScreenState extends State<MainScreen> {
                                       " de début d'allumage jusqu'à l'heure d'intensité maximale."
                                       " Ensuite, elle reste constante jusqu'à l'heure d'arrêt.",
                                 textAlign: TextAlign.justify,
+                              ),
+                              Row(
+                                children: <Widget>[
+                                  Text('Site web : '),
+                                  Link(
+                                    child: Text('tidann.alwaysdata.net'),
+                                    url: 'http://www.google.com',
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: <Widget>[
+                                  Text('Code source '),
+                                  Link(
+                                    child: Text('tidann.alwaysdata.net'),
+                                    url: 'http://www.google.com',
+                                  ),
+                                ],
                               ),
                               SizedBox(height: 20.0),
                               Text(
