@@ -7,6 +7,9 @@ L'application permet de choisir les 3 heures d'allumage, d'intensité maximale e
 ## Développement
 SimuAube est écrit en Dart avec le Framework Flutter. Théoriquement, celui-ci permet de publier des applications sur Android et iOS mais il est malheureusement impossible à ce jour de publier l'app sur ce dernier, Apple ne permettant pas les communications Bluetooth en Serial.
 
+## Application
+Disponible sur le [Play Store](https://play.google.com/store/apps/details?id=com.tidann.simuaube)
+
 ## Licence
 L'application est disponible sur le Play Store, mais le projet est open source, sous la licence du MIT, ce qui vous donne le droit de le modifier et le distribuer. (néanmoins, la mention de mon nom comme auteur original est appréciée :)
 > MIT License
